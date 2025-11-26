@@ -1,4 +1,4 @@
-import 'package:flutter_application_1/EXERCISE-4/model/jokes.dart';
+import 'package:flutter_application_1/Normal-Exercise/EXERCISE-4/model/jokes.dart';
 
 List<JokesList> jokes = [
   JokesList(title: "Hello", description: "Goodbye"),  // 1

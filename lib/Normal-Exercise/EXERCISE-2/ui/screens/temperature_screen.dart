@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 
-class TemperatureScreen extends StatelessWidget {
-  TemperatureScreen({super.key});
+class TemperatureScreen extends StatefulWidget {
+  const TemperatureScreen({super.key});
+
+  @override
+  State<TemperatureScreen> createState() => _TemperatureScreenState();
+}
+
+class _TemperatureScreenState extends State<TemperatureScreen> {
+  final TextEditingController temperatureController = TextEditingController();
+  String fahrenheitResult = '';
 
   final InputDecoration inputDecoration = InputDecoration(
     enabledBorder: OutlineInputBorder(
@@ -11,6 +19,30 @@ class TemperatureScreen extends StatelessWidget {
     hintText: 'Enter a temperature',
     hintStyle: const TextStyle(color: Colors.white),
   );
+
+  void _convertTemperature() {
+    final String input = temperatureController.text;
+    if (input.isEmpty) {
+      setState(() {
+        fahrenheitResult = '';
+      });
+      return;
+    }
+
+    final double? celsius = double.tryParse(input);
+    if (celsius != null) {
+      final double fahrenheit = (celsius * 9 / 5) + 32;
+      setState(() {
+        fahrenheitResult = fahrenheit.toStringAsFixed(2);
+      });
+    }
+  }
+
+  @override
+  void dispose() {
+    temperatureController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,8 +68,11 @@ class TemperatureScreen extends StatelessWidget {
             const Text("Temperature in Degrees:"),
             const SizedBox(height: 10),
             TextField(
+              controller: temperatureController,
               decoration: inputDecoration,
               style: const TextStyle(color: Colors.white),
+              keyboardType: TextInputType.number,
+              onChanged: (_) => _convertTemperature(),
             ),
             const SizedBox(height: 30),
             const Text("Temperature in Fahrenheit:"),
@@ -48,7 +83,7 @@ class TemperatureScreen extends StatelessWidget {
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(12),
               ),
-              child: const Text('test'),
+              child: Text(fahrenheitResult),
             ),
           ],
         ),

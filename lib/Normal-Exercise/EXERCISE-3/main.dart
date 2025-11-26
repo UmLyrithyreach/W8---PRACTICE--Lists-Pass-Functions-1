@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/EXERCISE-3/model/profile_tile_model.dart';
+import 'package:flutter_application_1/Normal-Exercise/EXERCISE-3/model/profile_tile_model.dart';
 
 import 'ui/screens/profile.dart';
 

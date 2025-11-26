@@ -4,12 +4,12 @@ import 'package:device_preview/device_preview.dart';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/EXERCISE-1/ex_1_start.dart';
-import 'package:flutter_application_1/EXERCISE-2/main.dart';
-import 'package:flutter_application_1/EXERCISE-3/main.dart';
-import 'package:flutter_application_1/EXERCISE-3/model/profile_tile_model.dart';
-import 'package:flutter_application_1/EXERCISE-3/data/profile_data.dart';
-import 'package:flutter_application_1/EXERCISE-4/main.dart';
+import 'package:flutter_application_1/Normal-Exercise/EXERCISE-1/ex_1_start.dart';
+import 'package:flutter_application_1/Normal-Exercise/EXERCISE-2/main.dart';
+import 'package:flutter_application_1/Normal-Exercise/EXERCISE-3/main.dart';
+import 'package:flutter_application_1/Normal-Exercise/EXERCISE-3/model/profile_tile_model.dart';
+import 'package:flutter_application_1/Normal-Exercise/EXERCISE-3/data/profile_data.dart';
+import 'package:flutter_application_1/Normal-Exercise/EXERCISE-4/main.dart';
 
 
 
@@ -58,7 +58,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: FavouriteApp(),
+      home: TemperatureApp(),
     );
   }
 }

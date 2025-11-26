@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/EXERCISE-2/ui/screens/welcome_screen.dart';
-import './ui/screens/temperature_screen.dart';
+import 'package:flutter_application_1/Normal-Exercise/EXERCISE-2/ui/screens/welcome_screen.dart';
+import 'ui/screens/temperature_screen.dart';
 
 bool isChange = false;
 
